@@ -4,7 +4,7 @@ body {
   font-family: system-ui, sans-serif;
   margin: 0;
   color: #222;
-  background: #f5f5f5;
+  background: #949494;
 }
 
 header {
@@ -12,8 +12,8 @@ header {
   justify-content: space-between;
   align-items: center;
   padding: 1rem 2rem;
-  background: #fff;
-  border-bottom: 1px solid #ddd;
+  background: #236320;
+  border-bottom: 1px solid #ffffff;
 }
 
 header h1 { margin: 0; font-size: 1.25rem; }
