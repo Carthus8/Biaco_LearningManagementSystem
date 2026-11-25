@@ -1,4 +1,4 @@
-/* jshint ignore:start */
+
 var courses = [
   {
     id: 1,
