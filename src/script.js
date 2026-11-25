@@ -1,4 +1,4 @@
-
+// ---------- Data (replace with API calls later) ----------
 var courses = [
   {
     id: 1,
@@ -30,7 +30,7 @@ function $(id) {
   return document.getElementById(id);
 }
 
-var views = ["login", "courses", "course", "progress"];
+var views = ["courses", "course", "progress"];
 
 function show(name) {
   for (var i = 0; i < views.length; i++) {
@@ -54,16 +54,9 @@ function isDone(courseId, lessonId) {
 }
 
 // ---------- Auth ----------
-function login(name) {
-  user = name;
-  localStorage.setItem("lms_user", name);
-  renderCourses();
-}
-
 function logout() {
   localStorage.removeItem("lms_user");
-  user = null;
-  show("login");
+  window.location.href = "login.html";
 }
 
 // ---------- Renderers ----------
@@ -139,14 +132,6 @@ function renderProgress() {
 }
 
 // ---------- Events ----------
-$("login-form").onsubmit = function (e) {
-  e.preventDefault();
-  var name = $("username").value.trim();
-  if (name) {
-    login(name);
-  }
-};
-
 $("complete-btn").onclick = function () {
   if (!progress[user]) {
     progress[user] = {};
@@ -163,24 +148,14 @@ $("complete-btn").onclick = function () {
 };
 
 $("back-to-courses").onclick = renderCourses;
-
-$("nav-courses").onclick = function () {
-  if (user) {
-    renderCourses();
-  }
-};
-
-$("nav-progress").onclick = function () {
-  if (user) {
-    renderProgress();
-  }
-};
-
+$("nav-courses").onclick = renderCourses;
+$("nav-progress").onclick = renderProgress;
 $("nav-logout").onclick = logout;
 
 // ---------- Init ----------
-if (user) {
-  renderCourses();
+if (!user) {
+  // Not logged in: send to the login page
+  window.location.href = "login.html";
 } else {
-  show("login");
+  renderCourses();
 }
