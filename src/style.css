@@ -3,8 +3,8 @@
 body {
   font-family: system-ui, sans-serif;
   margin: 0;
-  color: #222;
-  background: #949494;
+  color: #ffffff;
+  background: #1e1e1e;
 }
 
 header {
@@ -12,7 +12,7 @@ header {
   justify-content: space-between;
   align-items: center;
   padding: 1rem 2rem;
-  background: #236320;
+  background: #304130;
   border-bottom: 1px solid #ffffff;
 }
 
