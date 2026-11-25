@@ -20,7 +20,8 @@ var courses = [
 ];
 
 // ---------- State ----------
-var user = localStorage.getItem("lms_user");
+var user = null;
+var token = localStorage.getItem("lms_token");
 var progress = JSON.parse(localStorage.getItem("lms_progress") || "{}");
 var currentCourse = null;
 var currentLesson = null;
@@ -54,9 +55,16 @@ function isDone(courseId, lessonId) {
 }
 
 // ---------- Auth ----------
-function logout() {
-  localStorage.removeItem("lms_user");
+function clearAndLeave() {
+  localStorage.removeItem("lms_token");
   window.location.href = "login.html";
+}
+
+function logout() {
+  fetch("/api/logout", {
+    method: "POST",
+    headers: { "Authorization": "Bearer " + token }
+  }).then(clearAndLeave, clearAndLeave);
 }
 
 // ---------- Renderers ----------
@@ -153,9 +161,19 @@ $("nav-progress").onclick = renderProgress;
 $("nav-logout").onclick = logout;
 
 // ---------- Init ----------
-if (!user) {
-  // Not logged in: send to the login page
+if (!token) {
   window.location.href = "login.html";
 } else {
-  renderCourses();
+  fetch("/api/me", { headers: { "Authorization": "Bearer " + token } })
+    .then(function (res) {
+      if (!res.ok) {
+        throw new Error("Not logged in");
+      }
+      return res.json();
+    })
+    .then(function (data) {
+      user = data.username;
+      renderCourses();
+    })
+    .catch(clearAndLeave);
 }
