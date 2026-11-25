@@ -1,4 +1,4 @@
-// ---------- Data (replace with API calls later) ----------
+/* jshint ignore:start */
 var courses = [
   {
     id: 1,
