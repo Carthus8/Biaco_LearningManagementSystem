@@ -1,13 +1,42 @@
-// If already logged in, skip the login page
-if (localStorage.getItem("lms_user")) {
-  window.location.href = "index.html";
+var message = document.getElementById("message");
+
+// If a valid session already exists, skip the login page
+var savedToken = localStorage.getItem("lms_token");
+if (savedToken) {
+  fetch("/api/me", { headers: { "Authorization": "Bearer " + savedToken } })
+    .then(function (res) {
+      if (res.ok) {
+        window.location.href = "index.html";
+      } else {
+        localStorage.removeItem("lms_token");
+      }
+    });
 }
 
 document.getElementById("login-form").onsubmit = function (e) {
   e.preventDefault();
-  var name = document.getElementById("username").value.trim();
-  if (name) {
-    localStorage.setItem("lms_user", name);
-    window.location.href = "index.html";
-  }
+  var username = document.getElementById("username").value.trim();
+  var password = document.getElementById("password").value;
+
+  fetch("/api/login", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ username: username, password: password })
+  })
+    .then(function (res) {
+      return res.json().then(function (data) {
+        return { ok: res.ok, data: data };
+      });
+    })
+    .then(function (result) {
+      if (result.ok) {
+        localStorage.setItem("lms_token", result.data.token);
+        window.location.href = "index.html";
+      } else {
+        message.textContent = result.data.error;
+      }
+    })
+    .catch(function () {
+      message.textContent = "Could not reach the server.";
+    });
 };
