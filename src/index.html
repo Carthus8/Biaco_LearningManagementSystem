@@ -1,1 +1,59 @@
 <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Barebone LMS</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header>
+    <h1>Barebone LMS</h1>
+    <nav>
+      <button id="nav-courses">Courses</button>
+      <button id="nav-progress">My Progress</button>
+      <button id="nav-logout">Log out</button>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Login -->
+    <section id="view-login">
+      <h2>Student Login</h2>
+      <form id="login-form">
+        <input type="text" id="username" placeholder="Name" required>
+        <button type="submit">Log in</button>
+      </form>
+    </section>
+
+    <!-- Course list -->
+    <section id="view-courses" hidden>
+      <h2>Courses</h2>
+      <ul id="course-list"></ul>
+    </section>
+
+    <!-- Course detail / lessons -->
+    <section id="view-course" hidden>
+      <button id="back-to-courses">&larr; Back</button>
+      <h2 id="course-title"></h2>
+      <div class="layout">
+        <ul id="lesson-list"></ul>
+        <article>
+          <h3 id="lesson-title"></h3>
+          <div id="lesson-content"></div>
+          <button id="complete-btn">Mark as complete</button>
+        </article>
+      </div>
+    </section>
+
+    <!-- Progress -->
+    <section id="view-progress" hidden>
+      <h2>My Progress</h2>
+      <ul id="progress-list"></ul>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
