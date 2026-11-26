@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Course - Barebone LMS</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="shell">
+    <aside id="sidebar"></aside>
+    <main id="content">
+      <a class="back" href="index.html">&larr; Dashboard</a>
+      <h1 class="page-title" id="course-title">Loading...</h1>
+      <p class="muted" id="course-desc"></p>
+
+      <section class="card" id="post-box" hidden>
+        <h2>Post an activity</h2>
+        <form id="post-form">
+          <label>Title
+            <input type="text" id="act-title" maxlength="120" required>
+          </label>
+          <label>Description
+            <textarea id="act-desc" rows="3" maxlength="5000"></textarea>
+          </label>
+          <label>Due date
+            <input type="date" id="act-due">
+          </label>
+          <label>Files (optional, up to 25 MB each)
+            <input type="file" id="act-files" multiple>
+          </label>
+          <button class="btn btn-primary" type="submit" id="post-btn">Post activity</button>
+          <span class="msg" id="post-msg"></span>
+        </form>
+      </section>
+
+      <h2>Activities</h2>
+      <div id="activity-list"></div>
+    </main>
+  </div>
+  <script src="app.js"></script>
+  <script src="course.js"></script>
+</body>
+</html>
