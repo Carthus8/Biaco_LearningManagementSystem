@@ -49,13 +49,30 @@ h1, h2, h3 { margin: 0 0 8px; line-height: 1.25; }
 }
 
 /* ---------- layout ---------- */
-.shell { display: flex; gap: 24px; max-width: 1200px; margin: 0 auto; padding: 20px; min-height: 100vh; }
-#sidebar {
-  width: 290px; flex-shrink: 0; display: flex; flex-direction: column; gap: 16px;
-  position: sticky; top: 20px; align-self: flex-start; max-height: calc(100vh - 40px); overflow-y: auto;
+.shell {
+  display: flex;
+  gap: clamp(14px, 2vw, 28px);
+  width: 100%;
+  margin: 0;
+  padding: clamp(12px, 2vw, 28px);
+  min-height: 100vh;
 }
+
+#sidebar {
+  width: clamp(240px, 24vw, 340px);
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  position: sticky;
+  top: clamp(12px, 2vw, 28px);
+  align-self: flex-start;
+  max-height: calc(100vh - 2 * clamp(12px, 2vw, 28px));
+  overflow-y: auto;
+}
+
 #content { flex: 1; min-width: 0; }
-.page-title { font-size: 1.8rem; margin-bottom: 4px; }
+.page-title { font-size: clamp(1.4rem, 2.6vw, 2rem); margin-bottom: 4px; }
 .back { display: inline-block; margin-bottom: 10px; }
 
 @media (max-width: 800px) {
@@ -73,12 +90,16 @@ h1, h2, h3 { margin: 0 0 8px; line-height: 1.25; }
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 .side-card { margin-bottom: 0; }
-.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 16px; }
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 240px), 1fr));
+  gap: 16px;
+}
 .course-card { display: block; color: inherit; margin-bottom: 0; }
 .course-card:hover { transform: translateY(-4px); box-shadow: 0 12px 28px rgba(40, 55, 110, 0.14); text-decoration: none; }
 
 /* ---------- sidebar ---------- */
-.brand { font-weight: 700; font-size: 1.15rem; color: var(--text); padding: 4px 6px; }
+.brand { font-weight: 700; font-size: 1.05rem; line-height: 1.3; color: var(--text); padding: 4px 6px; }
 .brand:hover { text-decoration: none; }
 .profile-card { display: flex; align-items: center; gap: 12px; color: inherit; }
 .profile-card:hover { transform: translateY(-2px); box-shadow: 0 12px 28px rgba(40, 55, 110, 0.14); text-decoration: none; }
@@ -163,5 +184,6 @@ input:focus, textarea:focus { outline: none; border-color: var(--accent); box-sh
 .profile-hero { display: flex; align-items: center; gap: 18px; }
 .profile-hero h2 { margin-bottom: 2px; }
 .auth-wrap { min-height: 100vh; display: flex; align-items: center; justify-content: center; padding: 20px; }
-.auth-card { width: 100%; max-width: 380px; padding: 28px; }
+.auth-card { width: 100%; max-width: 420px; padding: clamp(20px, 4vw, 32px); }
+.auth-card h1 { font-size: 1.5rem; line-height: 1.3; }
 .auth-card input { margin-bottom: 12px; }
