@@ -110,7 +110,7 @@ function loadActivities() {
     }
     title.textContent = r.data.course.title;
     document.getElementById("course-desc").textContent = r.data.course.description;
-    document.title = r.data.course.title + " - Barebone LMS";
+    document.title = r.data.course.title + " - Student Learning Management System";
 
     var list = document.getElementById("activity-list");
     list.innerHTML = "";
