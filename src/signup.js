@@ -22,7 +22,7 @@ document.getElementById("signup-form").onsubmit = function (e) {
     })
     .then(function (result) {
       if (result.ok) {
-        window.location.href = "login.html";
+        go("login.html");
       } else {
         message.textContent = result.data.error;
       }
