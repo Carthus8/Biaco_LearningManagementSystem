@@ -3,48 +3,20 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Biaco_LMS</title>
+  <title>Dashboard - Barebone LMS</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
-  <header>
-    <h1>Student Learning Management System</h1>
-    <nav>
-      <button id="nav-courses">Courses</button>
-      <button id="nav-progress">My Progress</button>
-      <button id="nav-logout">Log out</button>
-    </nav>
-  </header>
-
-  <main>
-    <!-- Course list -->
-    <section id="view-courses" hidden>
-      <h2>Courses</h2>
-      <ul id="course-list"></ul>
-    </section>
-
-    <!-- Course detail / lessons -->
-    <section id="view-course" hidden>
-      <button id="back-to-courses">&larr; Back</button>
-      <h2 id="course-title"></h2>
-      <div class="layout">
-        <ul id="lesson-list"></ul>
-        <article>
-          <h3 id="lesson-title"></h3>
-          <div id="lesson-content"></div>
-          <button id="complete-btn">Mark as complete</button>
-        </article>
-      </div>
-    </section>
-
-    <!-- Progress -->
-    <section id="view-progress" hidden>
-      <h2>My Progress</h2>
-      <ul id="progress-list"></ul>
-    </section>
-  </main>
-
+  <div class="shell">
+    <aside id="sidebar"></aside>
+    <main id="content">
+      <h1 class="page-title">Dashboard</h1>
+      <p class="muted" id="greeting"></p>
+      <h2>My Courses</h2>
+      <div id="course-grid" class="grid stagger"></div>
+    </main>
+  </div>
+  <script src="app.js"></script>
   <script src="script.js"></script>
 </body>
 </html>
