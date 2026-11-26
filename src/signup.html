@@ -6,24 +6,22 @@
   <title>Sign Up - Barebone LMS</title>
   <link rel="stylesheet" href="style.css">
 </head>
-<body>
-
-  <header>
-    <h1>Barebone LMS</h1>
-  </header>
-
-  <main>
-    <h2>Create Account</h2>
-    <form id="signup-form">
-      <p><input type="text" id="username" placeholder="Username" required></p>
-      <p><input type="password" id="password" placeholder="Password" required></p>
-      <p><input type="password" id="confirm" placeholder="Confirm password" required></p>
-      <button type="submit">Sign up</button>
-    </form>
-    <p id="message"></p>
-    <p>Already have an account? <a href="login.html">Log in</a></p>
-  </main>
-
+<body data-public>
+  <div class="auth-wrap">
+    <div class="card auth-card">
+      <h1>Barebone LMS</h1>
+      <h2 class="muted">Create Account</h2>
+      <form id="signup-form">
+        <input type="text" id="username" placeholder="Username" required>
+        <input type="password" id="password" placeholder="Password" required>
+        <input type="password" id="confirm" placeholder="Confirm password" required>
+        <button class="btn btn-primary block" type="submit">Sign up</button>
+      </form>
+      <p id="message" class="msg"></p>
+      <p class="muted">Already have an account? <a href="login.html">Log in</a></p>
+    </div>
+  </div>
+  <script src="app.js"></script>
   <script src="signup.js"></script>
 </body>
 </html>
