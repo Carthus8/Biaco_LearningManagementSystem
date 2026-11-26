@@ -182,7 +182,7 @@ function buildSidebar(me) {
   if (!side) { return; }
   side.innerHTML = "";
 
-  var brand = el("a", "brand", "Barebone LMS");
+  var brand = el("a", "brand", "Student Learning Management System");
   brand.href = "index.html";
   side.appendChild(brand);
 
