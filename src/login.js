@@ -6,7 +6,7 @@ if (savedToken) {
   fetch("/api/me", { headers: { "Authorization": "Bearer " + savedToken } })
     .then(function (res) {
       if (res.ok) {
-        window.location.href = "index.html";
+       go("index.html");
       } else {
         localStorage.removeItem("lms_token");
       }
@@ -31,7 +31,7 @@ document.getElementById("login-form").onsubmit = function (e) {
     .then(function (result) {
       if (result.ok) {
         localStorage.setItem("lms_token", result.data.token);
-        window.location.href = "index.html";
+        go("index.html");
       } else {
         message.textContent = result.data.error;
       }
