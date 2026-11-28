@@ -242,3 +242,31 @@ if (!PUBLIC_PAGE) {
       });
   }
 }
+
+// ---------- footer (appears on every page) ----------
+(function () {
+  var footer = document.createElement("footer");
+  footer.className = "site-footer";
+
+  var line = document.createElement("div");
+  line.className = "footer-line";
+  line.appendChild(document.createElement("span")).className = "footer-dot";
+
+  var name = document.createElement("p");
+  name.className = "footer-name";
+  name.textContent = "Rigil Kent O. Biaco";
+
+  var course = document.createElement("p");
+  course.className = "footer-course";
+  course.textContent = "BSIT 3-3";
+
+  var rights = document.createElement("p");
+  rights.className = "footer-rights";
+  rights.textContent = "\u00a9 " + new Date().getFullYear() + " All rights reserved.";
+
+  footer.appendChild(line);
+  footer.appendChild(name);
+  footer.appendChild(course);
+  footer.appendChild(rights);
+  document.body.appendChild(footer);
+})();
