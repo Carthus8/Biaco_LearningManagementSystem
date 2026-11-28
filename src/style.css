@@ -308,8 +308,8 @@ body {
 .site-footer {
   position: relative;
   text-align: center;
-  padding: 28px 16px 32px;
-  margin-top: 8px;
+  padding: 14px 16px 16px;
+  margin-top: 4px;
   background: linear-gradient(180deg, rgba(43, 48, 45, 0.2), rgba(43, 48, 45, 0.85));
   border-top: 1px solid var(--line);
   backdrop-filter: blur(6px);
@@ -322,15 +322,15 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 0 auto 14px;
-  width: min(220px, 60%);
+  margin: 0 auto 8px;
+  width: min(160px, 50%);
   height: 2px;
   border-radius: 999px;
   background: linear-gradient(90deg, transparent, var(--accent), transparent);
 }
 .footer-dot {
-  width: 10px;
-  height: 10px;
+  width: 8px;
+  height: 8px;
   border-radius: 50%;
   background: var(--accent);
   box-shadow: 0 0 12px var(--glow), 0 0 0 4px rgba(47, 191, 113, 0.18);
@@ -339,15 +339,15 @@ body {
 
 .footer-name {
   font-weight: 800;
-  font-size: 1.05rem;
+  font-size: 0.9rem;
   letter-spacing: 0.4px;
   color: #fff;
 }
 .footer-course {
   display: inline-block;
-  margin: 8px 0;
-  padding: 3px 14px;
-  font-size: 0.8rem;
+  margin: 4px 0;
+  padding: 2px 10px;
+  font-size: 0.7rem;
   font-weight: 700;
   letter-spacing: 1px;
   color: var(--ok);
@@ -356,6 +356,6 @@ body {
   border-radius: 999px;
 }
 .footer-rights {
-  font-size: 0.85rem;
+  font-size: 0.75rem;
   color: var(--muted);
 }
