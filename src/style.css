@@ -76,7 +76,7 @@ body.leaving { opacity: 0; transform: translateY(-10px); }
 a { color: var(--ok); text-decoration: none; transition: color 0.2s ease; }
 a:hover { color: #fff; text-decoration: underline; }
 h1, h2, h3 { margin: 0 0 8px; line-height: 1.25; color: #fff; letter-spacing: 0.2px; }
-h2 { font-size: 1.25rem; }
+h2 { font-size: 1.00rem; }
 .muted { color: var(--muted); }
 
 ::-webkit-scrollbar { width: 10px; height: 10px; }
