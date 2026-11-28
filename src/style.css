@@ -164,13 +164,17 @@ h3 { font-size: 0.8rem; }
 
 /* ---------- cards ---------- */
 .card, .side-card {
-  background: linear-gradient(160deg, var(--card-2), var(--card));
-  border: 1px solid var(--line);
+  background: linear-gradient(160deg, rgba(60, 68, 63, 0.55), rgba(32, 38, 35, 0.5));
+  border: 1px solid rgba(255, 255, 255, 0.14);
   border-radius: var(--radius);
-  box-shadow: var(--shadow);
+  box-shadow:
+    0 10px 30px rgba(0, 0, 0, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(14px) saturate(130%);
+  -webkit-backdrop-filter: blur(14px) saturate(130%);
   padding: 18px;
   margin-bottom: 16px;
-  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease, background 0.2s ease;
 }
 .side-card { margin-bottom: 0; }
 .grid {
@@ -181,8 +185,9 @@ h3 { font-size: 0.8rem; }
 .course-card { display: block; color: inherit; margin-bottom: 0; border-top: 3px solid var(--accent); }
 .course-card:hover {
   transform: translateY(-5px);
-  border-color: var(--accent);
-  box-shadow: 0 14px 34px rgba(0, 0, 0, 0.5), 0 0 0 1px var(--glow);
+  background: linear-gradient(160deg, rgba(70, 80, 74, 0.62), rgba(36, 44, 40, 0.55));
+  border-color: rgba(95, 224, 160, 0.55);
+  box-shadow: 0 14px 34px rgba(0, 0, 0, 0.45), 0 0 0 1px var(--glow);
   text-decoration: none;
   color: inherit;
 }
@@ -200,12 +205,14 @@ h3 { font-size: 0.8rem; }
 .brand:hover { color: var(--ok); text-decoration: none; }
 .profile-card { display: flex; align-items: center; gap: 12px; color: inherit; }
 .profile-card:hover {
-  transform: translateY(-2px);
-  border-color: var(--accent);
-  box-shadow: 0 14px 34px rgba(0, 0, 0, 0.5), 0 0 0 1px var(--glow);
+  transform: translateY(-5px);
+  background: linear-gradient(160deg, rgba(70, 80, 74, 0.62), rgba(36, 44, 40, 0.55));
+  border-color: rgba(95, 224, 160, 0.55);
+  box-shadow: 0 14px 34px rgba(0, 0, 0, 0.45), 0 0 0 1px var(--glow);
   text-decoration: none;
   color: inherit;
 }
+.profile-card:hover { transform: translateY(-2px); }
 .profile-info { display: flex; flex-direction: column; gap: 4px; min-width: 0; }
 .profile-info strong { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; color: #fff; }
 .avatar {
@@ -330,8 +337,8 @@ body {
   text-align: center;
   padding: 14px 16px 16px;
   margin-top: 4px;
-  background: linear-gradient(180deg, rgba(43, 48, 45, 0.2), rgba(43, 48, 45, 0.85));
-  border-top: 1px solid var(--line);
+  background: linear-gradient(180deg, rgba(43, 48, 45, 0.15), rgba(32, 38, 35, 0.55));
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
   backdrop-filter: blur(6px);
   -webkit-backdrop-filter: blur(6px);
   animation: rise 0.6s ease backwards;
