@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700;800&family=Poppins:wght@400;500;600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700;800;900&family=Poppins:wght@400;500;600&display=swap");
 
 :root {
   --bg: #0a1f16;
@@ -364,12 +364,17 @@ body {
   color: var(--muted);
 }
 
-h1, h2, h3,
-.brand,
-.footer-name,
-.page-title {
-  font-family: var(--font-head);
+h1, h2, h3, .page-title {
+  font-weight: 800;
 }
-h1, h2, h3, .page-title { letter-spacing: 0.3px; }
 
-.btn { font-family: var(--font-body); }
+.page-title {
+  font-weight: 900;
+  font-size: clamp(1.8rem, 3.4vw, 2.6rem);
+  letter-spacing: 0.5px;
+}
+
+.brand {
+  font-weight: 900;
+  font-size: 1.1rem;
+}
