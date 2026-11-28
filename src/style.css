@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@500;700;800&family=Playfair Display:wght@400;500;600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700;800&family=Poppins:wght@400;500;600&display=swap");
 
 :root {
   --bg: #0a1f16;
@@ -18,7 +18,7 @@
   --radius-sm: 14px;
   --shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
   --font-body: "Playfair Display", system-ui, -apple-system, "Segoe UI", sans-serif;
-  --font-head: "Outfit", "Playfair Display", system-ui, sans-serif;
+  --font-head: "Playfair Display", Georgia, "Times New Roman", serif;
 }
 
 * { box-sizing: border-box; }
@@ -367,8 +367,9 @@ body {
 h1, h2, h3,
 .brand,
 .footer-name,
-.page-title,
-.btn {
+.page-title {
   font-family: var(--font-head);
 }
-h1, h2, h3, .page-title { letter-spacing: 0.5px; }
+h1, h2, h3, .page-title { letter-spacing: 0.3px; }
+
+.btn { font-family: var(--font-body); }
